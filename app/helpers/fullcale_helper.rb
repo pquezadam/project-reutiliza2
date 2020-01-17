@@ -1,0 +1,2 @@
+module FullcaleHelper
+end
