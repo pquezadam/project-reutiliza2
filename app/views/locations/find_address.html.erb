@@ -1,0 +1,17 @@
+<script> 
+ if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getAddress);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+        function getAddress(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+        $.ajax({
+            url: '<%= locations_find_address_path %>',
+            type: 'GET',
+            dataType: 'json',
+            data: {latitude: latitude, longitude: longitude}
+        });
+    };
+</script>

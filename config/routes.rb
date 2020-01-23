@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'locations/get_location'
+  get 'locations/find_address'
   resources :events
   get 'event', to: 'event#index'
   get 'pages/index'
